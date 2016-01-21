@@ -1,0 +1,73 @@
+@import '~bootstrap-sass/assets/stylesheets/bootstrap';
+
+@mixin centerer($horizontal: true, $vertical: true) {
+  position: absolute;
+
+  @if $horizontal and $vertical {
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+  @else if $horizontal {
+    left: 50%;
+    transform: translate(-50%, 0);
+  }
+  @else if $vertical {
+    top: 50%;
+    transform: translate(0, -50%);
+  }
+}
+
+body {
+ font-family: 'Raleway', sans-serif;
+}
+
+.login-page {
+  height: 100vh;
+
+  .login-page__header {
+    font-size: 6rem;
+    margin-top: 7%;
+    text-align: center;
+  }
+  .login-page__signin-form {
+    width: 70%;
+    @include centerer();
+  }
+}
+
+
+
+.app {
+  height: 100vh;
+}
+
+.app__main {
+  padding-top: 2%;
+  text-align: left;
+  vertical-align: central;
+  height: 100vh;
+}
+
+.app__sidebar {
+  color: black;
+  position: relative;
+  height: 100vh;
+
+  a {
+    color: black;
+    text-decoration: none;
+
+  }
+
+  ul {
+    padding: 0;
+    margin: 0;
+    height: 100vh;
+
+    li {
+      list-style-type: none;
+    }
+  }
+
+}
